@@ -20,6 +20,7 @@ Plug 'tpope/vim-surround'
 Plug 'lunacookies/vim-plan9'
 call plug#end()
 
+set scrolloff=1
 set smartindent
 set tabstop=4
 set softtabstop=4
@@ -55,6 +56,14 @@ nnoremap <leader>f :Files<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>h :History<CR>
 nnoremap <leader>g :Rg<CR>
+
+" lsp
+nnoremap <leader>c :cclose<CR>
+nnoremap <leader>q :copen<CR>
+nnoremap <leader>d :lua vim.diagnostic.setqflist()<CR>
+
+" go
+nnoremap <leader>gfs :GoFillStruct<CR>
 
 lua <<EOF
 local lsp = require('lsp-zero').preset({})
